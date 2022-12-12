@@ -56,7 +56,7 @@ const Navbar = () => {
             },
           }}
         >
-          Sociopedia
+          Coolbook
         </Typography>
         {isNonMobileScreens && (
           <FlexBetween
