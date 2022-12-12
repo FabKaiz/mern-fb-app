@@ -1,4 +1,4 @@
-# mern-fb-app
+# Coolbook
 MERN "facebook" type application
 
-## Work in progress
+### Work in progress
