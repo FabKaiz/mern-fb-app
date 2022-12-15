@@ -9,7 +9,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
   const token = useSelector((state) => state.token)
 
   const getPosts = async () => {
-    const response = await fetch(`http://localhost:3001/posts`, {
+    const response = await fetch('http://localhost:3001/posts', {
       method: 'GET',
       headers: { Authorization: `Bearer ${token}` },
     })
@@ -40,33 +40,31 @@ const PostsWidget = ({ userId, isProfile = false }) => {
   return (
     <>
       {posts.map(
-        (post) =>
-          ({
-            _id,
-            userId,
-            firstName,
-            lastName,
-            description,
-            location,
-            picturePath,
-            userPicturePath,
-            likes,
-            comments,
-          }) =>
-            (
-              <PostWidget
-                key={_id}
-                postId={_id}
-                postUserId={userId}
-                name={`${firstName} ${lastName}`}
-                description={description}
-                location={location}
-                picturePath={picturePath}
-                userPicturePath={userPicturePath}
-                likes={likes}
-                comments={comments}
-              />
-            )
+        ({
+          _id,
+          userId,
+          firstName,
+          lastName,
+          description,
+          location,
+          picturePath,
+          userPicturePath,
+          likes,
+          comments,
+        }) => (
+          <PostWidget
+            key={_id}
+            postId={_id}
+            postUserId={userId}
+            name={`${firstName} ${lastName}`}
+            description={description}
+            location={location}
+            picturePath={picturePath}
+            userPicturePath={userPicturePath}
+            likes={likes}
+            comments={comments}
+          />
+        )
       )}
     </>
   )
