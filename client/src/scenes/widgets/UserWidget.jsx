@@ -49,11 +49,7 @@ const UserWidget = ({ userId, picturePath }) => {
   return (
     <WidgetWrapper>
       {/* FIRST ROW */}
-      <FlexBetween
-        gap="0.5rem"
-        pb="1.1rem"
-        onClick={() => navigate(`/profile/${userId}`)}
-      >
+      <FlexBetween gap="0.5rem" pb="1.1rem">
         <FlexBetween gap="1rem">
           <UserImage image={picturePath} />
           <Box>
@@ -67,10 +63,13 @@ const UserWidget = ({ userId, picturePath }) => {
                   color: palette.primary.light,
                 },
               }}
+              onClick={() => navigate(`/profile/${userId}`)}
             >
               {firstName} {lastName}
             </Typography>
-            <Typography color="medium">{friends?.length} friends</Typography>
+            <Typography color="medium">
+              {friends?.length + ' friends'}
+            </Typography>
           </Box>
         </FlexBetween>
         <ManageAccountsOutlinedIcon />
