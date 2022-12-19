@@ -59,7 +59,7 @@ const MyPostWidget = ({ picturePath }) => {
   }
 
   return (
-    <WidgetWrapper>
+    <WidgetWrapper m="0 0 2rem">
       <FlexBetween gap="1.5rem">
         <UserImage image={picturePath} />
         <InputBase
@@ -159,11 +159,16 @@ const MyPostWidget = ({ picturePath }) => {
           disabled={!post}
           onClick={handlePost}
           sx={{
+            ml: '1rem',
             color: palette.background.alt,
             backgroundColor: palette.primary.main,
             borderRadius: '3rem',
             '&:hover': {
               backgroundColor: palette.primary.dark,
+            },
+            '&:disabled': {
+              backgroundColor: palette.neutral.light,
+              color: palette.neutral.medium,
             },
           }}
         >
